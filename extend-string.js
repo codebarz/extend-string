@@ -16,5 +16,9 @@ String.prototype.isQuestion = function () {
 String.prototype.words = function () {
   return this.match(/[a-zA-z]+/g);
 };
+String.prototype.wordCount = function () {
+  return this.words().length;
+};
+
 
 module.exports = String.prototype;
