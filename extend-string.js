@@ -19,6 +19,22 @@ String.prototype.words = function () {
 String.prototype.wordCount = function () {
   return this.words().length;
 };
+String.prototype.toCurrency = function () {
 
+};
+String.prototype.fromCurrency = function () {
 
+};
+String.prototype.inverseCase = function () {
+
+};
+String.prototype.alternatingCase = function () {
+
+};
+String.prototype.numberWords = function () {
+
+};
+String.prototype.isDigit = function () {
+  return (/\d/g).test(this);
+};
 module.exports = String.prototype;

@@ -23,7 +23,7 @@ describe("Extended String Methods", function () {
   it("Should return a list of words in an array from string", function () {
     expect(sentence.words()).toEqual(["What", "is", "my", "name"]);
   });
-  it("Should check the amout of words in a sentence", function () {
+  it("Should check the amount of words in a sentence", function () {
     expect(sentence.wordCount()).toEqual(4);
   });
   it("Should return currency representation", function () {
