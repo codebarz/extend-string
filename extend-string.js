@@ -2,25 +2,22 @@ String.prototype.hasVowels = function () {
   return (/[aeiou]/g).test(this);
 };
 String.prototype.toUpper = function () {
-  let stringArray = this.split("");
   let regExPatter = /^[a-z][a-z]*/g;
-  let capitalizedString = [];
+  let capitalizedString = "";
   if(regExPatter.test(this)) {
-    for(let index = 0; index < stringArray.length; index++) {
-      capitalizedString.push(String.fromCharCode(stringArray[index].charCodeAt(stringArray[index]) - 32));
-    }
-    return capitalizedString.join("");
+    for(let index = 0; index < this.length; index++) capitalizedString += String.fromCharCode(this[index].charCodeAt(this[index]) - 32);
   }
+  return capitalizedString;
 };
 String.prototype.toLower = function () {
   let regExPatter = /^[A-Z][a-zA-Z]*/g;
-  let capitalizedString = "";
+  let lowercaseString = "";
   if(regExPatter.test(this)) {
     for(let index = 0; index < this.length; index++) {
-      capitalizedString += String.fromCharCode(stringArray[index].charCodeAt(stringArray[index]) + 32);
+      lowercaseString += String.fromCharCode(this[index].charCodeAt(this[index]) + 32);
     }
   }
-  return capitalizedString;
+  return lowercaseString;
 };
 String.prototype.ucFirst = function () {
   if(/^[a-z]/.test(this)) {
