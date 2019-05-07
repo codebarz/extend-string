@@ -53,7 +53,17 @@ String.prototype.inverseCase = function () {
   return inverseString;
 };
 String.prototype.alternatingCase = function () {
-
+  this.toLower();
+  console.log(this);
+  let alternatedString = "";
+  for(let index = 0; index < this.length; index++) {
+    if(index % 2 !== 0) {
+      alternatedString += this[index].toUpper();
+      continue;
+    }
+    alternatedString += this[index];
+  }
+  return alternatedString;
 };
 String.prototype.numberWords = function () {
   let numberWords = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
