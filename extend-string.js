@@ -11,19 +11,16 @@ String.prototype.toUpper = function () {
     }
     return capitalizedString.join("");
   }
-  return "String is already uppercase";
 };
 String.prototype.toLower = function () {
-  let stringArray = this.split("");
   let regExPatter = /^[A-Z][a-zA-Z]*/g;
-  let capitalizedString = [];
+  let capitalizedString = "";
   if(regExPatter.test(this)) {
-    for(let index = 0; index < stringArray.length; index++) {
-      capitalizedString.push(String.fromCharCode(stringArray[index].charCodeAt(stringArray[index]) + 32));
+    for(let index = 0; index < this.length; index++) {
+      capitalizedString += String.fromCharCode(stringArray[index].charCodeAt(stringArray[index]) + 32);
     }
-    return capitalizedString.join("");
   }
-  return "String is already lowercase";
+  return capitalizedString;
 };
 String.prototype.ucFirst = function () {
   if(/^[a-z]/.test(this)) {
@@ -49,7 +46,14 @@ String.prototype.fromCurrency = function () {
 
 };
 String.prototype.inverseCase = function () {
-
+  let inverseString = "";
+  for(let index = 0; index < this.length; index++) {
+    if(/[A-Z]/g.test(this[index])) {
+      inverseString += this[index].toLower();
+    }
+    inverseString += this[index].toUpper();
+  }
+  return inverseString;
 };
 String.prototype.alternatingCase = function () {
 
