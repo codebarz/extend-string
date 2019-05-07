@@ -35,6 +35,6 @@ String.prototype.numberWords = function () {
 
 };
 String.prototype.isDigit = function () {
-  return (/\d/g).test(this);
+  return (/\b[\d?]\b/).test(this);
 };
 module.exports = String.prototype;
