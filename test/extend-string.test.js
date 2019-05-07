@@ -11,7 +11,7 @@ describe("Extended String Methods", function () {
     expect(testString.toUpper()).toBe("MICHAEL")
   });
   it("Should check if all string characters can be converted to lower case", function () {
-    expect(testString.toLower()).toBe("michael");
+    expect(testString.toUpperCase().toLower()).toBe("michael");
   });
   it("Should check conversion of first character to upper case", function () {
     expect(testString.ucFirst()).toBe("Michael");
