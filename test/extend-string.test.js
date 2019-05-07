@@ -13,4 +13,7 @@ describe("Extended String Methods", function() {
   it("Should check conversion of first character to upper case", function() {
     expect(testString.ucFirst()).toBe("Michael");
   });
+  it("Should check if a string is a question", function () {
+    expect(testString.isQuestion()).toBeFalsy();
+  })
 });
