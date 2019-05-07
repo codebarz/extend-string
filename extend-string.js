@@ -5,7 +5,9 @@ String.prototype.toUpper = function () {
   let regExPatter = /^[a-z][a-z]*/g;
   let capitalizedString = "";
   if(regExPatter.test(this)) {
-    for(let index = 0; index < this.length; index++) capitalizedString += String.fromCharCode(this[index].charCodeAt(this[index]) - 32);
+    for(let index = 0; index < this.length; index++) {
+      capitalizedString += String.fromCharCode(this[index].charCodeAt(this[index]) - 32);
+    }
   }
   return capitalizedString;
 };
@@ -37,7 +39,7 @@ String.prototype.wordCount = function () {
   return this.words().length;
 };
 String.prototype.toCurrency = function () {
-
+  return this.replace(/\d(?=(\d{3})+\.)/g, '$&,');
 };
 String.prototype.fromCurrency = function () {
   let regExPatter = /,/g;
@@ -54,17 +56,16 @@ String.prototype.inverseCase = function () {
   return inverseString;
 };
 String.prototype.alternatingCase = function () {
-  this.toLower();
-  console.log(this);
-  let alternatedString = "";
-  for(let index = 0; index < this.length; index++) {
-    if(index % 2 !== 0) {
-      alternatedString += this[index].toUpper();
-      continue;
+  let regExPattern = /[a-z]/;
+  let result = "";
+    for(let letter of this) {
+      if(regExPattern.test(letter)) {
+        result += letter.toUpper();
+        continue;
+      }
+      result += letter.toLower();
     }
-    alternatedString += this[index];
-  }
-  return alternatedString;
+  return result;
 };
 String.prototype.numberWords = function () {
   let numberWords = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];

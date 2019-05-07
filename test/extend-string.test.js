@@ -37,7 +37,7 @@ describe("Extended String Methods", function () {
     expect(sentence.inverseCase()).toBe("wHAT is my name");
   });
   it("Should check if string can be alternated", function () {
-    expect(testString.alternatingCase()).toBe("mIcHaEl");
+    expect("Mr. Ben".alternatingCase()).toBe("mR. bEN");
   });
   it("Should check if number can be converted to words", function () {
     expect(aNumber.numberWords()).toBe("three two five");
