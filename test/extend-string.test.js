@@ -2,6 +2,7 @@ let string = require("../extend-string");
 let testString = "michael";
 let sentence = "What is my name?";
 let currencyDigits = "11111.11";
+let currency = "11,111.11";
 let aNumber = "325";
 describe("Extended String Methods", function () {
   it("Should return boolean if string contains a vowel", function () {
@@ -30,7 +31,7 @@ describe("Extended String Methods", function () {
     expect(currencyDigits.toCurrency()).toBe("11,111.11");
   });
   it("Should return number representation of currency", function () {
-    expect(currency.fromCurrency()).toBe("11111.11");
+    expect(currency.fromCurrency()).toEqual(11111.11);
   });
   it("Should return each letter in a string as inverse", function () {
     expect(sentence.inverseCase()).toBe("wHAT is my name");
