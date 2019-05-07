@@ -26,7 +26,12 @@ String.prototype.toLower = function () {
   return "String is already lowercase";
 };
 String.prototype.ucFirst = function () {
-
+  if(/^[a-z]/.test(this)) {
+    let stringArray = this.split("");
+    stringArray[0] = stringArray[0].toUpper();
+    return stringArray.join("");
+  }
+  return "First letter is already uppercase";
 };
 String.prototype.isQuestion = function () {
   return (/.\?$/g).test(this);
