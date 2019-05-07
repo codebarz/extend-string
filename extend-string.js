@@ -42,8 +42,9 @@ String.prototype.numberWords = function () {
         result.push(numberWords[index]);
       }
     });
+    return result.join(" ");
   }
-  return result.join(" ");
+  return "Kindly enter digits in string format";
 };
 String.prototype.isDigit = function () {
   return (/\b[\d?]\b/).test(this);
