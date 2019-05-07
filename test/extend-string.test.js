@@ -31,4 +31,7 @@ describe("Extended String Methods", function () {
   it("Should return number representation of currency", function () {
     expect(currency.fromCurrency()).toBe("11111.11");
   });
+  it("Should return each letter in a string as inverse", function () {
+    expect(sentence.inverseCase()).toBe("wHAT is my name");
+  });
 });
