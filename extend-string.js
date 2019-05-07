@@ -40,7 +40,8 @@ String.prototype.toCurrency = function () {
 
 };
 String.prototype.fromCurrency = function () {
-
+  let regExPatter = /,/g;
+  return +this.replace(regExPatter, "");
 };
 String.prototype.inverseCase = function () {
   let inverseString = "";
