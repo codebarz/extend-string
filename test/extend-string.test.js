@@ -41,4 +41,7 @@ describe("Extended String Methods", function () {
   it("Should check if number can be converted to words", function () {
     expect(aNumber.numberWords()).toBe("three two five");
   });
+  it("Should return boolean if the number is digit", function () {
+    expect(aNumber.isDigit()).toBeFalsy();
+  });
 });
