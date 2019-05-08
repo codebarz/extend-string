@@ -49,5 +49,6 @@ describe("Extended String Methods", function () {
   });
   it("Should return boolean if the number is digit", function () {
     expect(aNumber.isDigit()).toBeFalsy();
+    expect("3".isDigit()).toBeTruthy();
   });
 });
