@@ -34,10 +34,10 @@ describe("Extended String Methods", function () {
     expect(currency.fromCurrency()).toEqual(11111.11);
   });
   it("Should return each letter in a string as inverse", function () {
-    expect(sentence.inverseCase()).toBe("wHAT is my name");
+    expect("Mr. Ben".inverseCase()).toBe("mR. bEN");
   });
   it("Should check if string can be alternated", function () {
-    expect("Mr. Ben".alternatingCase()).toBe("mR. bEN");
+    expect("Onomatopoeia".alternatingCase()).toBe("oNoMaToPoEiA");
   });
   it("Should check if number can be converted to words", function () {
     expect(aNumber.numberWords()).toBe("three two five");

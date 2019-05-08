@@ -2,22 +2,24 @@ String.prototype.hasVowels = function () {
   return (/[aeiou]/g).test(this);
 };
 String.prototype.toUpper = function () {
-  let regExPatter = /^[a-z][a-z]*/g;
   let capitalizedString = "";
-  if(regExPatter.test(this)) {
-    for(let index = 0; index < this.length; index++) {
-      capitalizedString += String.fromCharCode(this[index].charCodeAt(this[index]) - 32);
+  for(let index = 0; index < this.length; index++) {
+    let characterCode = this.charCodeAt(index);
+    if(characterCode >= 97 && characterCode <= 122) {
+      characterCode -= 32;
     }
+    capitalizedString += String.fromCharCode(characterCode);
   }
   return capitalizedString;
 };
 String.prototype.toLower = function () {
-  let regExPatter = /^[A-Z][a-zA-Z]*/g;
   let lowercaseString = "";
-  if(regExPatter.test(this)) {
-    for(let index = 0; index < this.length; index++) {
-      lowercaseString += String.fromCharCode(this[index].charCodeAt(this[index]) + 32);
+  for(let index = 0; index < this.length; index++) {
+    let characterCode = this.charCodeAt(index);
+    if(characterCode >= 65 && characterCode <= 90) {
+      characterCode += 32;
     }
+    lowercaseString += String.fromCharCode(characterCode);
   }
   return lowercaseString;
 };
@@ -56,16 +58,15 @@ String.prototype.inverseCase = function () {
   return inverseString;
 };
 String.prototype.alternatingCase = function () {
-  let regExPattern = /[a-z]/;
-  let result = "";
-    for(let letter of this) {
-      if(regExPattern.test(letter)) {
-        result += letter.toUpper();
-        continue;
-      }
-      result += letter.toLower();
+  let alternatedString = "";
+  for(let index = 0; index < this.length; index++) {
+    if(index % 2 !== 0) {
+      alternatedString += this[index].toUpper();
+      continue;
     }
-  return result;
+    alternatedString += this[index].toLower();
+  }
+  return alternatedString;
 };
 String.prototype.numberWords = function () {
   let numberWords = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
