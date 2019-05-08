@@ -16,6 +16,7 @@ describe("Extended String Methods", function () {
   });
   it("Should check conversion of first character to upper case", function () {
     expect(testString.ucFirst()).toBe("Michael");
+    expect("Michael".ucFirst()).toBe("First letter is already uppercase");
   });
   it("Should check if a string is a question", function () {
     expect(testString.isQuestion()).toBeFalsy();
@@ -35,12 +36,16 @@ describe("Extended String Methods", function () {
   });
   it("Should return each letter in a string as inverse", function () {
     expect("Mr. Ben".inverseCase()).toBe("mR. bEN");
+    expect("Michael Scoffield".inverseCase()).toBe("mICHAEL sCOFFIELD");
   });
   it("Should check if string can be alternated", function () {
     expect("Onomatopoeia".alternatingCase()).toBe("oNoMaToPoEiA");
+    expect("tega".alternatingCase()).toBe("tEgA");
   });
   it("Should check if number can be converted to words", function () {
     expect(aNumber.numberWords()).toBe("three two five");
+    expect("575".numberWords()).toBe("five seven five");
+    expect("foreign".numberWords()).toBe("Kindly enter digits in string format");
   });
   it("Should return boolean if the number is digit", function () {
     expect(aNumber.isDigit()).toBeFalsy();

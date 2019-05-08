@@ -52,6 +52,7 @@ String.prototype.inverseCase = function () {
   for(let index = 0; index < this.length; index++) {
     if(/[A-Z]/g.test(this[index])) {
       inverseString += this[index].toLower();
+      continue;
     }
     inverseString += this[index].toUpper();
   }
