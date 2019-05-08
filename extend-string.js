@@ -75,11 +75,9 @@ String.prototype.numberWords = function () {
   let regExPattern = /\d/g;
   let result = [];
   if(this.match(regExPattern)) {
-    numberWords.forEach((value, index) => {
-      if(index = +digitArray[index]) {
-        result.push(numberWords[index]);
-      }
-    });
+    for(let i = 0; i < digitArray.length; i++){
+      result.push(numberWords[digitArray[i]]);
+    }
     return result.join(" ");
   }
   return "Kindly enter digits in string format";
