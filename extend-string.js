@@ -41,12 +41,12 @@ String.prototype.ucFirst = function () {
 
 /*Checks if the string is a question*/
 String.prototype.isQuestion = function () {
-  return (/.\?$/g).test(this); //pattern returns boolean if string ends with a ?.
+  return (/.+\?$/g).test(this); //pattern returns boolean if string ends with a ?.
 };
 
 /*Gets all the words in a string*/
 String.prototype.words = function () {
-  return this.match(/[a-zA-z]+/g); //return an array of words that match regEx pattern.
+  return this.match(/[a-zA-z0-9]+/g); //return an array of words that match regEx pattern.
 };
 
 /*Gets the amount of word in a string*/
