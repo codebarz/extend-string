@@ -113,6 +113,7 @@ String.prototype.numberWords = function () {
 
 /*Checks if a string is a digit*/
 String.prototype.isDigit = function () {
-  return (/\b[\d?]\b/).test(this); //return boolean (true) if regEx pattern match single digit
+  let regExPattern = /\b[\d?]\b/;//regEx pattern to check if a digit is entered
+  return (regExPattern).test(this); //return boolean (true) if regEx pattern match single digit
 };
 module.exports = String.prototype;
